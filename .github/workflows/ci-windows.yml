@@ -1,0 +1,41 @@
+name: CI - Bank Transaction Processor Tests
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - name: Display Node.js version
+      run: node --version
+    
+    - name: Install dependencies
+      run: npm install
+    
+    - name: Run unit tests
+      run: npm test
+    
+    - name: Test completion message
+      if: success()
+      run: echo "All tests passed successfully!"
+    
+    - name: Test failure message
+      if: failure()
+      run: echo "Tests failed. Please check the logs above."

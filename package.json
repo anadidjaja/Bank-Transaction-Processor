@@ -1,0 +1,20 @@
+{
+  "name": "bank-transaction-processor",
+  "version": "1.0.0",
+  "description": "Unit Testing Assignment - Bank Transaction Processor with DevOps CI/CD",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "unit-testing",
+    "devops",
+    "ci-cd",
+    "bank-transactions"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
