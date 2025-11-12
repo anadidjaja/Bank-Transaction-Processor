@@ -17,7 +17,6 @@ function assert(condition, testName) {
 
 console.log('=== Bank Transaction Processor Unit Tests ===\n');
 
-// ========== VALID TEST CASES (Should Pass) ==========
 console.log('--- Valid Test Cases ---');
 
 // Valid Test 1: Deposit money into account
@@ -38,7 +37,6 @@ try {
   testsFailed++;
 }
 
-// ========== INVALID TEST CASES (Handle Errors Properly) ==========
 console.log('\n--- Invalid Test Cases ---');
 
 // Invalid Test 1: Withdraw more than current balance
@@ -61,20 +59,17 @@ try {
          'Invalid Test 2: Deposit negative amount should throw error');
 }
 
-// ========== INTENTIONAL BREAK TEST (Fails on Purpose) ==========
 console.log('\n--- Intentional Break Test ---');
 
 // Intentional Break Test: Expect wrong output to force CI failure
-// COMMENT OUT OR REMOVE THIS TEST FOR THE PASSING RUN
-try {
-  const result = deposit(100, 50);
-  assert(result === 200, 'Intentional Break: Deposit 50 into 100 expecting wrong result (200) - SHOULD FAIL');
-} catch (e) {
-  console.log(`✗ FAIL: Intentional Break Test - ${e.message}`);
-  testsFailed++;
-}
+// try {
+//   const result = deposit(100, 50);
+//   assert(result === 200, 'Intentional Break: Deposit 50 into 100 expecting wrong result (200) - SHOULD FAIL');
+// } catch (e) {
+//   console.log(`✗ FAIL: Intentional Break Test - ${e.message}`);
+//   testsFailed++;
+// }
 
-// Summary
 console.log('\n=== Test Summary ===');
 console.log(`Total Tests: ${testsPassed + testsFailed}`);
 console.log(`Passed: ${testsPassed}`);

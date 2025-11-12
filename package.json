@@ -12,8 +12,6 @@
     "ci-cd",
     "bank-transactions"
   ],
-  "author": "Your Name",
-  "license": "ISC",
   "engines": {
     "node": ">=14.0.0"
   }

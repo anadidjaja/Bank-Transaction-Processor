@@ -1,9 +1,4 @@
 /**
- * Bank Transaction Processor
- * Handles deposit and withdrawal operations with validation
- */
-
-/**
  * Deposits an amount into the account balance
  * @param {number} balance - Current account balance
  * @param {number} amount - Amount to deposit
